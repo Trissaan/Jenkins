@@ -1,0 +1,47 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo "Fetch the source code from the directory: "
+            }
+        }
+        stage('Unit and integeration Test') {
+            steps {
+                echo "Run integration tests to ensure the different components of the application work together with Selenium"
+            }
+        }
+        stage('Code Analysis') {
+            steps {
+                echo "- Integrate the code using ESLint to analyse the code and ensure it meets industry standards"
+            }
+        }
+        stage('Security Scan') {
+            steps {
+                echo "Perform a security scan on the code using Nessus"
+            }
+        }
+        stage('Deploy to staging'){
+            steps{
+                echo "Deploy the application to a staging server using AWS"
+            }
+        }
+        stage('Integeration Testing on staging') {
+            steps {
+                    echo " Running integration tests on the staging environment to ensure the application functions as expected using Selenium"
+            }
+        }
+        stage('Deploy to Production') {
+            steps {
+                echo "Deploying the code to production environment: Ec2 instance(AWS)"
+            }
+        }
+        post{
+            success{
+                mail to: "trissaan@gmail.com",
+                subject: "Build status mail",
+                body: "The build was successful and the logs are attached"
+            }
+        }
+    }
+}
