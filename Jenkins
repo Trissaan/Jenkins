@@ -46,16 +46,17 @@ pipeline {
             post {
                 success{
 		 emailext(
-                    to:"trissaan@gmail.com"
-                    subject:"Build Status" 
-                    body: "Scan was successful"
+                    to:"trissaan@gmail.com",
+                    subject:"Build Status" ,
+                    body: "Scan was successful",
+		    attachLog: true	
 			)
                 }
                 failure{
 			emailext(
-                    to:"trissaan@gmail.com"
-                    subject:"Build Status"
-                    body: "Scan Failed and the logs were attached"
+                    to:"trissaan@gmail.com",
+                    subject:"Build Status",
+                    body: "Scan Failed and the logs were attached",
                     attachLog : true
 			)
                 }
