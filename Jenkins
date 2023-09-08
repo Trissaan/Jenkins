@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Code Analysis') {
             steps {
-                echo "- Integrate the code using ESLint to analyse the code and ensure it meets industry standards"
+                echo "Integrate the code using ESLint to analyse the code and ensure it meets industry standards"
             }
         }
         stage('Security Scan') {
