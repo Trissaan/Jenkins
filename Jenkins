@@ -15,7 +15,7 @@ pipeline {
             post {
     success {
         emailext (
-            to: "trissaan@gmail.com",
+            to: "s222596801@deakin.edu.au",
             subject: "Build status",
             body: "Test was successful and logs were attached",
             attachLog: true,
@@ -24,7 +24,7 @@ pipeline {
     }
     failure {
         emailext(
-            to: "trissaan@gmail.com",
+            to: "s222596801@deakin.edu.au",
             subject: "Build Status",
             body: "Test Failed and logs were attched",
             attachLog: true,
@@ -48,7 +48,7 @@ pipeline {
             post {
                 success{
 		 emailext(
-                    to:"trissaan@gmail.com",
+                    to:"s222596801@deakin.edu.au",
                     subject:"Build Status" ,
                     body: "Scan was successful",
 		    attachLog: true,
@@ -57,7 +57,7 @@ pipeline {
                 }
                 failure{
 			emailext(
-                    to:"trissaan@gmail.com",
+                    to:"s222596801@deakin.edu.au",
                     subject:"Build Status",
                     body: "Scan Failed and the logs were attached",
                     attachLog : true,
